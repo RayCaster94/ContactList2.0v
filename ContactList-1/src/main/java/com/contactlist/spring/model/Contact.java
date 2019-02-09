@@ -15,7 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
-@Table(name = "persona")
+@Table(name = "PERSONA")
 public class Contact implements Serializable{
 
 	
@@ -24,6 +24,7 @@ public class Contact implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)	
+	@Column(name = "IDPERSONA")
 	private int contactId;
 	private String contactName;
 	private String contactSurname;
@@ -32,22 +33,23 @@ public class Contact implements Serializable{
 	private Date birthDate;
 	
 	//conexiones
-	@JoinColumn(name = "iddireccion", referencedColumnName = "idpersona")
-	@OneToMany
-	private Address address;
+	//@JoinColumn(name = "iddireccion", referencedColumnName = "idpersona")
+	//@OneToMany
+	//private Address address;
 	
-	@JoinColumn(name = "idprovincia")
-	@OneToOne
-	private City city;
+	//@JoinColumn(name = "idprovincia")
+	//@OneToOne
+	//private City city;
 	
-	@JoinColumn(name = "idtelefono", referencedColumnName = "idpersona")
-	@OneToMany
-	private List<Phone> phoneList;
+	//@JoinColumn(name = "idtelefono", referencedColumnName = "idpersona")
+	//@OneToMany
+	//private List<Phone> phoneList;
 	
 	public Contact() {
 		
 	}
 
+	
 	
 	public int getContactId() {
 		return contactId;
@@ -90,6 +92,7 @@ public class Contact implements Serializable{
 		this.birthDate = birthDate;
 	}
 	
+	/*
 	public Address getAddress() {
 		return address;
 	}
@@ -113,12 +116,14 @@ public class Contact implements Serializable{
 	public void setPhoneList(List<Phone> phoneList) {
 		this.phoneList = phoneList;
 	}
+	
+	*/
 
 	@Override
 	public String toString() {
 		return "Contact [contactId=" + contactId + ", contactName=" + contactName + ", contactSurname=" + contactSurname
 				+ ", contactLastSurname=" + contactLastSurname + ", dni=" + dni + ", birthDate=" + birthDate
-				+ ", address=" + address + ", city=" + city + ", phoneList=" + phoneList + "]";
+				+ "]";
 	}
 
 

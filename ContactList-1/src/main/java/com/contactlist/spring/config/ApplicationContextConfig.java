@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
-@ComponentScan("com.ejemplos.spring")
+@ComponentScan("com.contactlist.spring")
 @EnableWebMvc
 @EnableTransactionManagement
 public class ApplicationContextConfig implements WebMvcConfigurer  {
