@@ -1,4 +1,4 @@
-package com.contactlist.spring.config;
+/*package com.contactlist.spring.config;
 
 
 import org.springframework.context.annotation.Bean;
@@ -18,15 +18,15 @@ public class ApplicationContextConfig implements WebMvcConfigurer  {
     @Bean(name = "viewResolver")
     public InternalResourceViewResolver getViewResolver() {
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-        viewResolver.setPrefix("/META-INF/views/");//cambiar por meta-inf?
+        viewResolver.setPrefix("/views/");
         viewResolver.setSuffix(".jsp");
         return viewResolver;
     }
     
 
-	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-	    registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");  
+public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");  
 	}
      
 	
-}
+}*/

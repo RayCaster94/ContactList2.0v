@@ -29,9 +29,7 @@
                    <td>${contacto.apellido2}</td>
                    <td>${telefono.telefono}</td>
 
-                   <td><a align="center" href="#">FICHA</a><!--<a href="edit?id=${user.idpersona}">EDITAR</a>
-                       <a href="delete?id=${user.idpersona}">BORRAR</a>
-                   --></td>
+                 
                </tr>
            </c:forEach>
        </table>

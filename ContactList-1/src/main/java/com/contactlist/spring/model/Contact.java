@@ -15,7 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
-@Table(name = "PERSONA")
+@Table(name = "persona")
 public class Contact implements Serializable{
 
 	
@@ -24,12 +24,17 @@ public class Contact implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)	
-	@Column(name = "IDPERSONA")
+	@Column(name = "idpersona")
 	private int contactId;
+	@Column(name ="nombre")
 	private String contactName;
+	@Column(name ="apellido1")
 	private String contactSurname;
+	@Column(name ="apellido2")
 	private String contactLastSurname;
+	@Column(name ="dni")
 	private String dni;
+	@Column(name ="fechanacimiento")
 	private Date birthDate;
 	
 	//conexiones
