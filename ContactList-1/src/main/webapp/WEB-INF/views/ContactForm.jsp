@@ -27,56 +27,42 @@
        <table>
        <!-- ESTO ES UN COMENTARIO DE PRUEBA -->
            <form:form action="save" method="post" modelAttribute="contact">
-               <form:hidden path="idpersona" />
+               <form:hidden path="contactId" />
                <tr>
                    <td>NOMBRE:</td>
                    <td>
-                       <form:input path="nombre" />
+                       <form:input path="contactName" />
                    </td>
                </tr>
                <tr>
                    <td>PRIMER APELLIDO:</td>
                    <td>
-                       <form:input path="apellido1" />
+                       <form:input path="contactSurname" />
                    </td>
-               </tr>
-               <tr>
-                   <td>SEGUNDO APELLIDO:</td>
+               </tr>     
+                <td>SEGUNDO APELLIDO:</td>
                    <td>
-                       <form:input path="apellido2" />
+                       <form:input path="contactLastSurname" />
                    </td>
-               </tr>
-               <tr>
+                    <tr>
                    <td>DNI:</td>
                    <td>
                        <form:input path="dni" />
                    </td>
-               </tr>
-               <tr>
+                    </tr>
+                      <tr>
                    <td>FECHA DE NACIMIENTO:</td>
                    <td>
-                       <form:input path="fechanacimiento" />
+                       <form:input path="birthDate" />
                    </td>
-               </tr>
-               <tr>
-                   <td>DIRECCION:</td>
-                   <td>
-                       <form:input path="direccion" />
-                   </td>
-               </tr>
-               <tr>
-                   <td>NUMERO TELEFONO:</td>
-                   <td>
-                       <form:input path="telefonos" />
-                   </td>
-               </tr>
+                    </tr>
+                   
+                         
 
                <tr>
                    <td colspan="2" align="center"><input type="submit" value="Guardar Contacto"></td>
                </tr>
-               <tr>
-                   <td ><a href="/list">ATRAS</a></td>
-               </tr>
+              
            </form:form>
        </table>
    </div>

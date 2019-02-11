@@ -17,10 +17,12 @@ public class ContactServices implements IContactServices {
 	
 	@Autowired
 	private IContactDao contactDao;
-
+	
+   
 	public void addContact(Contact contact) {
-		//contactDao.save(contact);
+		contactDao.save(contact);
 	}
+	
 	
 	@Override
 	public List<Contact> list() {

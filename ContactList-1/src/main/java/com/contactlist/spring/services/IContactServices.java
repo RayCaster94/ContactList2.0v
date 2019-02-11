@@ -7,7 +7,7 @@ import com.contactlist.spring.model.Contact;
 
 public interface IContactServices {
 	
-	public void addContact(Contact contact);
+	//public void addContact(Contact contact);
 
 	public List<Contact> list();
 }

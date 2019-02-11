@@ -10,6 +10,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -25,7 +28,7 @@ public class Contact implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)	
 	@Column(name = "idpersona")
-	private int contactId;
+	private Integer contactId;
 	@Column(name ="nombre")
 	private String contactName;
 	@Column(name ="apellido1")
@@ -53,84 +56,66 @@ public class Contact implements Serializable{
 	public Contact() {
 		
 	}
-
 	
-	
-	public int getContactId() {
+	public Integer getContactId() {
 		return contactId;
 	}
-	public void setContactId(int contactId) {
+
+	public void setContactId(Integer contactId) {
 		this.contactId = contactId;
 	}
+
 	public String getContactName() {
 		return contactName;
 	}
+
 	public void setContactName(String contactName) {
 		this.contactName = contactName;
 	}
-	
+
 	public String getContactSurname() {
 		return contactSurname;
 	}
+
 	public void setContactSurname(String contactSurname) {
 		this.contactSurname = contactSurname;
 	}
-	
+
 	public String getContactLastSurname() {
 		return contactLastSurname;
 	}
+
 	public void setContactLastSurname(String contactLastSurname) {
 		this.contactLastSurname = contactLastSurname;
 	}
-	
-	public String getdni() {
+
+	public String getDni() {
 		return dni;
 	}
-	public void setDNI(String dni) {
+
+	public void setDni(String dni) {
 		this.dni = dni;
 	}
-	
+
 	public Date getBirthDate() {
 		return birthDate;
 	}
+
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
 	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	
-	/*
-	public Address getAddress() {
-		return address;
-	}
-
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-
-	public City getCity() {
-		return city;
-	}
-
-	public void setCity(City city) {
-		this.city = city;
-	}
-
-	public List<Phone> getPhoneList() {
-		return phoneList;
-	}
-
-	public void setPhoneList(List<Phone> phoneList) {
-		this.phoneList = phoneList;
-	}
 	
-	*/
+	
 
-	@Override
-	public String toString() {
-		return "Contact [contactId=" + contactId + ", contactName=" + contactName + ", contactSurname=" + contactSurname
-				+ ", contactLastSurname=" + contactLastSurname + ", dni=" + dni + ", birthDate=" + birthDate
-				+ "]";
-	}
-
+	
+	
+	
 
 	
 }
