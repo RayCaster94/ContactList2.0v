@@ -11,5 +11,7 @@ import com.contactlist.spring.model.Contact;
 @Repository
 public interface IContactDao extends JpaRepository<Contact, Integer>, IContactDaoCustom {
 
+
+
 	
 }

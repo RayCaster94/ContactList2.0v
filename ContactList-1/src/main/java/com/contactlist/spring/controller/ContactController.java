@@ -19,6 +19,7 @@ import com.contactlist.spring.services.ContactServices;
 
 
 
+
 @Controller
 public class ContactController {
 
@@ -35,7 +36,7 @@ public class ContactController {
 	}	
 	
 	@GetMapping("/new")
-	public String newUser(ModelMap model) {
+	public String newContact(ModelMap model) {
 		logger.info("-- en NEW");
 		model.addAttribute("contact", new Contact());
 		return "ContactForm";		
@@ -49,4 +50,23 @@ public class ContactController {
 	}
 	
 	
-}
+	//@DeleteMapping("/")
+	@GetMapping("/delete")
+	public ModelAndView deleteContact(@RequestParam("id") int id) {
+		logger.info("-- en DELETE");
+		service.delete(id);
+		return new ModelAndView("redirect:/");		
+	}
+	
+	@GetMapping("/edit")
+	public String editContact(ModelMap model, @RequestParam("id") int id) {
+		logger.info("-- en EDIT");
+		model.addAttribute("contact", service.get(id));
+		return "ContactForm";		
+		
+	}
+	
+
+	}
+	
+
