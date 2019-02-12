@@ -15,6 +15,8 @@ public interface IContactServices {
     public Contact get(int id);
 	
 	public void update(Contact contact);
+	
+	
 
 
 

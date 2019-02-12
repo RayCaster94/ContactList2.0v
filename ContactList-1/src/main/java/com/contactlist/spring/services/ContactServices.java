@@ -54,12 +54,6 @@ public class ContactServices implements IContactServices {
 	}
 
 
-	public  List<Contact> getFirstNamesLike(String contactName) {
-		Query query = entityManager.createNativeQuery("SELECT * FROM persona " +
-	             "WHERE persona.nombre LIKE ?", Contact.class);
-	     query.setParameter(1, contactName + "%");
-	     return query.getResultList();
-	}
 	
 	
 	

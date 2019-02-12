@@ -56,6 +56,11 @@
                        <form:input path="birthDate" />
                    </td>
                     </tr>
+                     <td>TELEFONO:</td>
+                   <td>
+                       <form:input path="phones[0].phoneNumber" />
+                   </td>
+                    </tr>
                    
                          
 
