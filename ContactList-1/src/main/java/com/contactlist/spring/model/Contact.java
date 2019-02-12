@@ -28,7 +28,7 @@ public class Contact implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)	
 	@Column(name = "idpersona")
-	private Integer contactId;
+	private int contactId;
 	@Column(name ="nombre")
 	private String contactName;
 	@Column(name ="apellido1")
@@ -57,11 +57,11 @@ public class Contact implements Serializable{
 		
 	}
 	
-	public Integer getContactId() {
+	public int getContactId() {
 		return contactId;
 	}
 
-	public void setContactId(Integer contactId) {
+	public void setContactId(int contactId) {
 		this.contactId = contactId;
 	}
 

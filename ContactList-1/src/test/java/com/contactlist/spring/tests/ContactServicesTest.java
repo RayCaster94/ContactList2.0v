@@ -18,6 +18,11 @@ import com.contactlist.spring.services.ContactServices;
 import com.contactlist.spring.dao.IContactDao;
 import com.contactlist.spring.model.Contact;
 
+import static org.mockito.Mockito.when;
+
+import javax.inject.Inject;
+import org.mockito.InjectMocks;
+
 
 @RunWith(SpringRunner.class)
 //@RunWith(MockitoJUnitRunner.class)
@@ -26,7 +31,7 @@ class ContactServicesTest {
 	
 	Logger logger = LoggerFactory.getLogger(ContactServicesTest.class);
 	
-	@MockBean
+	/*@MockBean
 	private ContactServices cService; //esta es la que llama al metodo de dao
 	
 	@MockBean
@@ -36,15 +41,26 @@ class ContactServicesTest {
 	private Contact contact; //esto (cont.)
 	
 	@Autowired
-	private MockMvc mockMvc; //(cont.) y esto no lo entiendo bien
+	private MockMvc mockMvc; //(cont.) y esto no lo entiendo bien*/
 	
 	
+	@MockBean
+	private IContactDao iContactDao;
+	
+	/*@MockBean
+	private ContactServices contactServices;*/
+	
+	@Autowired
+	private MockMvc mockMvc;
+	
+	@InjectMocks
+	private Contact contact;	
 
 	@Test
-	void testAddContact() {
-		logger.info("Primer Test");
-		//when(cService.addContact(contact));
-		//when then
+	public void testAddContact() {
+		contact.setContactLastSurname("Garcia");
+		/*this.mockMvc
+		.perform("/new")*/
 		
 	}
 

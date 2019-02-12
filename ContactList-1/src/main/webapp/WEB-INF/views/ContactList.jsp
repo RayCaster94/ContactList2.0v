@@ -35,12 +35,14 @@
            <c:forEach var="contact" items="${contactList}" varStatus="status">
                <tr>
              
-                   <td>${contact.contactName}</td>
+                   <td><a href="details?id=${contact.contactId}">${contact.contactName}</a></td>
                    <td>${contact.contactSurname}</td>
                    <td>${contact.contactLastSurname}</td>
                    <td>${contact.dni}</td>
                    <td>${contact.birthDate}</td>
-                   
+                   <td><a href="edit?id=${contact.contactId}">Modificar</a>
+                         <a href="delete?id=${contact.contactId}">Eliminar</a>
+                    </td>
          </tr>
            </c:forEach>
        </table>
