@@ -30,6 +30,7 @@
            <th>SEGUNDO APELLIDO</th>
            <th>DNI</th>
            <th>FECHA NACIMIENTO</th>
+           <th>TELEFONO</th>
            </tr>
 
            <c:forEach var="contact" items="${contactList}" varStatus="status">
@@ -40,6 +41,11 @@
                    <td>${contact.contactLastSurname}</td>
                    <td>${contact.dni}</td>
                    <td>${contact.birthDate}</td>
+                   
+                   <td>${contact.phones[0].phoneNumber}</td>
+                   <td><a href="edit?id=${contact.contactId}">Modificar</a>
+						&nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=${contact.contactId}">Eliminar</a>
+					</td>
                    
          </tr>
            </c:forEach>

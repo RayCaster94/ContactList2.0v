@@ -1,7 +1,7 @@
 package com.contactlist.spring.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -11,14 +11,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.persistence.JoinColumn;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+
 
 @Entity
 @Table(name = "persona")
+//@NamedQuery(name="Persona.findAll", query="SELECT p FROM Persona p")
 public class Contact implements Serializable{
 
 	
@@ -28,7 +28,7 @@ public class Contact implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)	
 	@Column(name = "idpersona")
-	private Integer contactId;
+	private int contactId;
 	@Column(name ="nombre")
 	private String contactName;
 	@Column(name ="apellido1")
@@ -40,28 +40,20 @@ public class Contact implements Serializable{
 	@Column(name ="fechanacimiento")
 	private Date birthDate;
 	
-	//conexiones
-	//@JoinColumn(name = "iddireccion", referencedColumnName = "idpersona")
-	//@OneToMany
-	//private Address address;
-	
-	//@JoinColumn(name = "idprovincia")
-	//@OneToOne
-	//private City city;
-	
-	//@JoinColumn(name = "idtelefono", referencedColumnName = "idpersona")
-	//@OneToMany
-	//private List<Phone> phoneList;
+	//bi-directional many-to-one association to Telefono
+		@OneToMany(mappedBy="contact")
+		private List<Phone> phones;
+		
 	
 	public Contact() {
 		
 	}
-	
-	public Integer getContactId() {
+
+	public int getContactId() {
 		return contactId;
 	}
 
-	public void setContactId(Integer contactId) {
+	public void setContactId(int contactId) {
 		this.contactId = contactId;
 	}
 
@@ -105,17 +97,17 @@ public class Contact implements Serializable{
 		this.birthDate = birthDate;
 	}
 
+	public List<Phone> getPhones() {
+		return phones;
+	}
+
+	public void setPhones(List<Phone> phones) {
+		this.phones = phones;
+	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
-	
-	
-	
-
-	
-	
-	
 
 	
 }
