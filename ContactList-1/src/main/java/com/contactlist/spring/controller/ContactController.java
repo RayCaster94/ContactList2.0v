@@ -17,6 +17,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.contactlist.spring.model.Contact;
 import com.contactlist.spring.services.ContactServices;
 
+import org.springframework.web.bind.annotation.PathVariable;
+
 
 
 

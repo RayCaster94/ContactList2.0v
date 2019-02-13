@@ -1,7 +1,10 @@
 package com.contactlist.spring.services;
 
 import java.util.List;
-import java.util.Optional;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +20,9 @@ public class ContactServices implements IContactServices {
 	
 	@Autowired
 	private IContactDao contactDao;
+	
+	@PersistenceContext
+	EntityManager entityManager;
 	
    
 	public void addContact(Contact contact) {
@@ -37,9 +43,14 @@ public class ContactServices implements IContactServices {
 	
 	@Override
 	public Contact showContactDetails(int id) {
+		/*String prueba = "SELECT p.* FROM agenda_mini.Persona as p WHERE p.idpersona = ?";
+		Query query = entityManager.createNativeQuery(prueba, Contact.class);
+		query.setParameter("1", contactId);
+		return (Contact) query.getSingleResult();*/
+		
 		return contactDao.findById(id)
 				.orElse(null); //Como es opcional en el metodo del JPARepository, te pide como otra opcion por si no existe/se encuentra
-		//SE PODRIA CREAR UNA EXCEPCION PERSONALIZADA
+		//SE PODRIA CREAR UNA EXCEPCION PERSONALIZADA*/
 		
 	}
 
