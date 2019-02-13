@@ -18,9 +18,6 @@ import com.contactlist.spring.model.Phone;
 import com.contactlist.spring.services.ContactServices;
 
 
-
-
-
 @Controller
 public class ContactController {
 
