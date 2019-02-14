@@ -17,11 +17,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "telefono")
 //@NamedQuery(name="Telefono.findAll", query="SELECT t FROM Telefono t")
-public class Phone implements  Serializable {
+public class Phone implements Serializable  {
 
+	    /**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
-	
-	    @Id
+		@Id
 	    @GeneratedValue(strategy=GenerationType.AUTO)
 	    @Column(name = "idtelefono")
 	private int phoneId;
@@ -63,10 +65,7 @@ public class Phone implements  Serializable {
 		this.contact = contact;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
+	
 	@Override
 	public String toString() {
 		return "Phone [phoneNumber]";

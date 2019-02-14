@@ -8,9 +8,16 @@ import org.springframework.stereotype.Repository;
 import com.contactlist.spring.model.Contact;
 
 @Repository
-public interface IContactDao extends JpaRepository<Contact, Integer>, IContactDaoCustom {
+public interface IContactDao extends JpaRepository<Contact, Integer> {
+	/*
 
+	//void delete(Contact user);
 
+	List<Contact> findAll();
 
-	
+	Contact findOne(int id);
+
+	@SuppressWarnings("unchecked")
+	Contact save(Contact contact);*/
+
 }

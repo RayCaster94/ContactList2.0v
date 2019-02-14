@@ -19,14 +19,20 @@ import javax.persistence.OneToMany;
 @Entity
 @Table(name = "persona")
 //@NamedQuery(name="Persona.findAll", query="SELECT p FROM Persona p")
-public class Contact implements Serializable{
+public class Contact implements Serializable {
 
 	
 	//ESTA ES LA ÚNICA CLASE QUE TIENE LAS RELACIONES ESTABLECIDAS CON LAS OTRAS CLASES.
+	
+	
+	/**
+	 * 
+	 */
+	
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)	
 	@Column(name = "idpersona")
 	private int contactId;
 	@Column(name ="nombre")
@@ -105,9 +111,7 @@ public class Contact implements Serializable{
 		this.phones = phones;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
+	
 
 	
 }

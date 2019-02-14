@@ -1,10 +1,10 @@
 package com.contactlist.spring.services;
 
 import java.util.List;
+import java.util.Optional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
+
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,16 +17,16 @@ import com.contactlist.spring.dao.IContactDao;
 @Transactional
 public class ContactServices implements IContactServices {
 	
-	@PersistenceContext
-    EntityManager entityManager;
+	//@PersistenceContext
+    //EntityManager entityManager;
 	
 	
 	@Autowired
 	private IContactDao contactDao;
 	
    
-	public void addContact(Contact contact) {
-		contactDao.save(contact);
+	public Contact addContact(Contact contact) {
+		return contactDao.save(contact);
 	}
 	
 	
@@ -37,21 +37,36 @@ public class ContactServices implements IContactServices {
 	}
 
 
-	public void delete(int id) {
-		contactDao.deleteById(id);
-		
-	}
+	 @Override
+	    public void delete(int id) {
+		 Optional<Contact> contact = findById(id);
+		 
+	        if(contact != null){
+	            contactDao.deleteById(id);
+	        }
 
+	    }
+	    
+	 
+	  @Override
+	  public Optional<Contact> findById(int id) {
+
+	        return contactDao.findById(id);
+	    }
+	    
 
 	@Override
-	public Contact get(int id) {
-		return contactDao.getOne(id);
+	public Contact update(Contact contact) {
+		return contactDao.save(contact);
 	}
-
+	
 	@Override
-	public void update(Contact contact) {
-		contactDao.save(contact);
-	}
+    public Optional<Contact> showContactDetails(int id) { 
+        return contactDao.findById(id);
+             
+    }
+
+
 
 
 	
